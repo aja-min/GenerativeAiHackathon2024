@@ -10,12 +10,13 @@ const Home: React.FC = () => {
   const [input1, setInput1] = useState(formData.input1);
   const [input2, setInput2] = useState(formData.input2);
   const [input3, setInput3] = useState(formData.input3);
+  const [input4, setInput4] = useState(formData.input4);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const router = useRouter();
 
   const handleNext = () => {
-    if (currentQuestion === 2) {
-      setFormData({ input1, input2, input3 });
+    if (currentQuestion === 3) {
+      setFormData({ input1, input2, input3, input4 });
       router.push('/pageB');
     } else {
       setCurrentQuestion(currentQuestion + 1);
@@ -27,7 +28,7 @@ const Home: React.FC = () => {
       <div className={styles.slider} style={{ transform: `translateX(-${currentQuestion * 100}%)` }}>
         <div className={styles.question}>
           <label>
-            Input 1:
+            名前は？:
             <input
               type="text"
               value={input1}
@@ -37,7 +38,7 @@ const Home: React.FC = () => {
         </div>
         <div className={styles.question}>
           <label>
-            Input 2:
+            趣味は？:
             <input
               type="text"
               value={input2}
@@ -47,11 +48,21 @@ const Home: React.FC = () => {
         </div>
         <div className={styles.question}>
           <label>
-            Input 3:
+            何か一言！:
             <input
               type="text"
               value={input3}
               onChange={(e) => setInput3(e.target.value)}
+            />
+          </label>
+        </div>
+        <div className={styles.question}>
+          <label>
+            自己紹介のテイストは？:
+            <input
+              type="text"
+              value={input4}
+              onChange={(e) => setInput4(e.target.value)}
             />
           </label>
         </div>

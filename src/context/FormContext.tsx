@@ -6,6 +6,7 @@ interface FormData {
   input1: string;
   input2: string;
   input3: string;
+  input4: string;
 }
 
 interface FormContextType {
@@ -16,7 +17,8 @@ interface FormContextType {
 const defaultFormData: FormData = {
   input1: '',
   input2: '',
-  input3: ''
+  input3: '',
+  input4: '',
 };
 
 export const FormContext = createContext<FormContextType>({
