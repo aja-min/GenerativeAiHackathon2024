@@ -45,7 +45,7 @@ const PageB: React.FC = () => {
 
         const data = await res.json();
         setResponse(data.choices[0].message.content);
-      } catch (err) {
+      } catch (err: any) {
         setError(err.message);
       } finally {
         setLoading(false);
